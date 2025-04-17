@@ -1,4 +1,4 @@
-package redroverschool.lecture22jenerics;
+package redroverschool.lecture22jenerics1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,18 @@ public class Main {
 
         //только четные числа
         System.out.println(filter(List.of(1, 2, 3,4), new IsEven()));
+
+        /*
+        //фильтр - содержит ли слово букву е
+        System.out.println(filter(strings, new Transformer<String, Boolean>(){
+                    @Override
+                    public Boolean transform(String element) {
+                        return element.contains('е');
+                } ));
+
+         */
+
+
 
      /*
      //способ имплементации через анонимный внутренний класс

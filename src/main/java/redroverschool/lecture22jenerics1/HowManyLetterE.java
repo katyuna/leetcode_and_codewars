@@ -1,4 +1,4 @@
-package redroverschool.lecture22jenerics;
+package redroverschool.lecture22jenerics1;
 
 public class HowManyLetterE implements Transformer<String, Integer> {
     @Override

@@ -8,29 +8,34 @@ Return a boolean array result of length n, where result[i] is true if, after giv
 Note that multiple kids can have the greatest number of candies.
  */
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class KidsWithCandies {
 
-    public static boolean[] kidsWithCandies(int[] candies, int extraCandies) {
-        boolean[] result = new boolean[candies.length];
-        int max = 0;
-        for (int i=0; i<candies.length; i++){
-            if (candies[i]+extraCandies>candies[i+1]){
-
-            }
-
+    public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int maximum = 0;
+        for (int candie : candies) {
+            maximum = Math.max(maximum, candie);
         }
 
+        List<Boolean> result = new ArrayList<>();
+        for (int i = 0; i < candies.length; ++i) {
+            if (candies[i] + extraCandies >= maximum){
+                result.add(true);
+            }else result.add(false);
 
+        }
         return result;
     }
+
 
     public static void main (String[] args){
         int[] candies = {4, 2, 1, 1, 2};
         int extraCandies = 1;
 
-        boolean[] result = kidsWithCandies(candies, extraCandies);
+        List<Boolean> result = kidsWithCandies(candies, extraCandies);
+
         System.out.println(result);  // [true, true, true, false, true]
 
     }
